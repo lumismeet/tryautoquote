@@ -59,7 +59,7 @@ const testimonials = [
     image: "/person2.png",
   },
   {
-    text: "Was skeptical at first — I figured there'd be a catch or they'd just spam me with calls. Neither happened. Got matched with a provider I actually recognized and the rate was lower than what I had.",
+    text: "Was skeptical at first. I figured there'd be a catch or they'd just spam me with calls. Neither happened. Got matched with a provider I actually recognized and the rate was lower than what I had.",
     name: "Tom Vasquez",
     location: "Tampa, FL",
     image: "/person3.png",
@@ -96,7 +96,7 @@ const features = [
   {
     icon: PhoneOff,
     title: "No spam calls",
-    text: "Compare quotes without a flood of follow-up calls — you decide who to talk to.",
+    text: "Compare quotes without a flood of follow-up calls. You decide who to talk to.",
   },
   {
     icon: Zap,
@@ -310,7 +310,7 @@ function HeroSection({
 
             <p className="mt-6 text-base md:text-lg text-white/70 max-w-lg mx-auto md:mx-0">
               Answer a few quick questions and we&apos;ll find the best auto
-              insurance rates available in your area — no commitment required.
+              insurance rates available in your area. No commitment required.
             </p>
 
             <div className="mt-8 flex justify-center md:justify-start">
@@ -656,7 +656,7 @@ const achievements = [
   {
     icon: Clock,
     stat: "Minutes",
-    label: "to compare and switch — not hours of paperwork",
+    label: "to compare and switch, not hours of paperwork",
   },
   {
     icon: ShieldCheck,
@@ -692,7 +692,7 @@ function Achievements() {
           Achievements
         </h2>
         <p className="text-white/65 max-w-xl mx-auto mb-12">
-          Built to earn drivers&apos; trust — here&apos;s what comparing with
+          Built to earn drivers&apos; trust. Here&apos;s what comparing with
           TryAutoQuote gets you.
         </p>
 
@@ -789,7 +789,7 @@ const insights = [
   },
   {
     title: "Bundling Home and Auto: Is It Worth It?",
-    desc: "Multi-policy discounts can be significant — here's when bundling actually saves money.",
+    desc: "Multi-policy discounts can be significant, here's when bundling actually saves money.",
     img: "/auto_pics/discussingpolicies.jpeg",
   },
   {
@@ -887,7 +887,7 @@ function CtaSection() {
             </h2>
             <p className="text-[#0A2A4F]/60 max-w-md mx-auto md:mx-0 mb-8">
               Answer a few quick questions and we&apos;ll find the best auto
-              insurance rates available in your area — no commitment required.
+              insurance rates available in your area. No commitment required.
             </p>
             <div className="flex justify-center md:justify-start">
               <ZipForm light />
