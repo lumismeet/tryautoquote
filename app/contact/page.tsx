@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Mail, Send } from "lucide-react"
-import Navbar from "@/components/Navbar"
+import Navbar from "@/components/NavbarV2";
 import Footer from "@/components/footer"
 
 // Import your own Navbar and Footer here

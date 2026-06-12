@@ -4,19 +4,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type NavbarV2Props = {
-  onQuoteClick: () => void;
+  onQuoteClick?: () => void;
 };
 
 const links = [
-  { label: "Home", href: "#" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function NavbarV2({ onQuoteClick }: NavbarV2Props) {
+  const router = useRouter();
+  const handleQuote = onQuoteClick ?? (() => router.push("/?quote=1"));
   const [open, setOpen] = useState(false);
 
   return (
@@ -53,7 +56,7 @@ export default function NavbarV2({ onQuoteClick }: NavbarV2Props) {
 
         {/* Desktop CTA */}
         <button
-          onClick={onQuoteClick}
+          onClick={handleQuote}
           className="hidden md:inline-flex bg-[#2B5BA8] hover:bg-[#E8732A] transition text-white text-sm font-semibold px-6 py-2.5 rounded-full cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0A2A4F]"
         >
           Get a Quote →
@@ -89,7 +92,7 @@ export default function NavbarV2({ onQuoteClick }: NavbarV2Props) {
               <button
                 onClick={() => {
                   setOpen(false);
-                  onQuoteClick();
+                  handleQuote();
                 }}
                 className="w-full bg-[#2B5BA8] hover:bg-[#E8732A] transition text-white font-semibold px-6 py-3 rounded-full cursor-pointer"
               >

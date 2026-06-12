@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/NavbarV2";
 import Footer from "@/components/footer";
 import Link from "next/link";
 

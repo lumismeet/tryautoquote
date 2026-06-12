@@ -12,7 +12,7 @@ const faqs = [
   {
     question: "How quickly can I get matched with providers?",
     answer:
-      "Almost instantly. Once you share a few details about yourself and your vehicle, our matching engine compares them in real time against a live database connected to dozens of top insurance carriers — so you see relevant, valid options in minutes, not days.",
+      "Almost instantly. Once you share a few details about yourself and your vehicle, our matching engine compares them in real time against a live database connected to dozens of top insurance carriers. So you see relevant, valid options in minutes, not days.",
   },
   {
     question: "Is the service really free?",

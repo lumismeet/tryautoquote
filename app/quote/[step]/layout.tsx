@@ -1,4 +1,5 @@
 import QuizProgress from "@/components/QuizProgress";
+import QuoteHighlighter from "@/components/QuoteHighlighter";
 
 export default async function QuoteLayout({
   children,
@@ -11,6 +12,7 @@ export default async function QuoteLayout({
 
   return (
     <>
+      <QuoteHighlighter />
       {step !== "16" && <QuizProgress step={step} />}
       {children}
     </>

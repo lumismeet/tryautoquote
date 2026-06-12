@@ -70,19 +70,19 @@ const steps = [
   {
     icon: ClipboardList,
     title: "A little Information",
-    text: "Provide some basic information about yourself and your vehicle. This allows us to generate customized, personalized results.",
+    text: "Provide some basic details about yourself and your vehicle. This takes about 2 minutes and lets us generate personalized, accurate results and not generic quotes. The service is free and you are never obligated to buy anything.",
     image: "/ill_comp_blue.svg",
   },
   {
     icon: Car,
     title: "A bit of Magic",
-    text: "Our smart matching engine sifts through thousands of possible insurance policies and only presents you with relevant and valid options.",
+    text: "Our matching engine compares your profile in real time against dozens of top carriers. You'll see the best available rates for your area side by side. No waiting, no back-and-forth with agents. The quotes reflect actual current rates, not ballpark estimates.",
     image: "/ill_hero_blue.svg",
   },
   {
     icon: DollarSign,
     title: "A Lot of Savings",
-    text: "You have the freedom to choose the specific policy you feel suits you the most from a list of matching policies we provide.",
+    text: "Review your options and choose the policy that fits your budget and coverage needs. If you're ready, you can purchase directly through the carrier. If not, just walk away with no pressure, no follow-up calls.",
     image: "/ill_mobile_blue.svg",
   },
 ];
@@ -91,22 +91,22 @@ const features = [
   {
     icon: ShieldCheck,
     title: "Free, always",
-    text: "The service is free and you are never obligated to buy the presented policy.",
+    text: "The service is free and you are never obligated to buy the presented policy. No hidden fees, no credit card required. Just real rates from real carriers, at no cost to you.",
   },
   {
     icon: PhoneOff,
     title: "No spam calls",
-    text: "Compare quotes without a flood of follow-up calls. You decide who to talk to.",
+    text: "Compare quotes without a flood of follow-up calls. You decide who to talk to. We never sell your phone number to telemarketers. Your contact details stay between you and the carrier you choose.",
   },
   {
     icon: Zap,
     title: "Real-time matching",
-    text: "Your details are compared live against a database connected to dozens of top insurance carriers.",
+    text: "Your details are compared live against a database connected to dozens of top insurance carriers. The quotes you see reflect actual current rates, not ballpark estimates generated days later.",
   },
   {
     icon: BadgeCheck,
     title: "Carriers you recognize",
-    text: "Get matched with established providers you actually know, willing to insure you.",
+    text: "Get matched with established providers you actually know, willing to insure you. No obscure names, only trusted carriers with strong reputations and solid claims track records.",
   },
 ];
 
@@ -117,12 +117,27 @@ const features = [
 export default function Home() {
   const zipRef = useRef<HTMLInputElement>(null);
 
+  useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("quote") === "1") {
+    setTimeout(focusZip, 300);
+  }
+}, []);
+
   const focusZip = () => {
-    if (!zipRef.current) return;
-    zipRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
-    // Delay focus so it doesn't cancel smooth scroll
-    setTimeout(() => zipRef.current?.focus(), 400);
-  };
+  if (!zipRef.current) return;
+  zipRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+  setTimeout(() => {
+    const input = zipRef.current;
+    if (!input) return;
+    input.focus();
+    input.style.transition = "box-shadow 0.3s ease";
+    input.style.boxShadow = "0 0 0 4px rgba(232, 115, 42, 0.6)";
+    setTimeout(() => {
+      input.style.boxShadow = "0 0 0 4px rgba(232, 115, 42, 0)";
+    }, 1500);
+  }, 400);
+};
 
   return (
     <div
@@ -294,7 +309,7 @@ function HeroSection({
   zipRef: React.RefObject<HTMLInputElement | null>;
 }) {
   return (
-    <section className="relative">
+    <section id="get-a-quote" className="relative">
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 pt-16 md:pt-24 lg:pt-28 pb-16 md:pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* Text */}

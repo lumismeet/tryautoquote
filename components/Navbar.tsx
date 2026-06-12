@@ -12,26 +12,25 @@ export default function Navbar({ onQuoteClick }: NavbarProps) {
   const router = useRouter();
 
   const handleQuote = () => {
-    if (onQuoteClick) {
-      onQuoteClick();
-    } else {
-      router.push("/quote/1");
-    }
+    window.dispatchEvent(new CustomEvent("highlight-quote-input"));
   };
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50">
       <div className="flex items-center justify-between bg-white shadow-md px-6 py-4">
 
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/logo-test1.png"
-            alt="TryAutoQuote Logo"
-            width={140}
-            height={40}
-            className="h-10 w-auto cursor-pointer"
-            priority
-          />
+        <Link href="/" className="flex items-center gap-2.5 shrink-0">
+          <span className="relative w-8 h-8 md:w-9 md:h-9">
+            <Image
+              src="/logo_try.svg"
+              alt="TryAutoQuote logo"
+              fill
+              className="object-contain"
+            />
+          </span>
+          <span className="text-lg md:text-xl font-extrabold tracking-tight text-[#0A2A4F]">
+            Try<span className="text-[#2B5BA8]">Auto</span>Quote
+          </span>
         </Link>
 
         <div className="hidden md:flex gap-8 text-sm font-medium text-gray-700">
